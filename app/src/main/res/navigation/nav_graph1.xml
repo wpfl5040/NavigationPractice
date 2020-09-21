@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph1"
+    app:startDestination="@id/mainHomeFragment">
+    <fragment
+        android:id="@+id/mainHomeFragment"
+        android:name="com.wpfl5.navigationpractice.graph1.MainHomeFragment"
+        android:label="MainHomeFragment"
+        tools:layout="@layout/fragment_main_home">
+        <action
+            android:id="@+id/action_mainHomeFragment_to_mainOneFragment2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:destination="@id/mainOneFragment2" />
+        <action
+            android:id="@+id/action_mainHomeFragment_to_nav_graph2"
+            app:destination="@id/nav_graph2" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainOneFragment2"
+        android:name="com.wpfl5.navigationpractice.graph1.MainOneFragment"
+        android:label="fragment_main_one"
+        tools:layout="@layout/fragment_main_one" >
+        <action
+            android:id="@+id/action_mainOneFragment2_to_mainTwoFragment"
+            app:destination="@id/mainTwoFragment" />
+    </fragment>
+    <include app:graph="@navigation/nav_graph2" />
+    <fragment
+        android:id="@+id/mainGlobalFragment2"
+        android:name="com.wpfl5.navigationpractice.graph1.MainGlobalFragment"
+        android:label="fragment_main_global"
+        tools:layout="@layout/fragment_main_global" />
+
+    <action android:id="@+id/action_global_mainFragment"
+            app:destination="@id/mainGlobalFragment2"/>
+    <fragment
+        android:id="@+id/mainTwoFragment"
+        android:name="com.wpfl5.navigationpractice.graph1.MainTwoFragment"
+        android:label="fragment_main_two"
+        tools:layout="@layout/fragment_main_two" >
+        <action
+            android:id="@+id/action_mainTwoFragment_to_mainHomeFragment"
+            app:destination="@id/mainHomeFragment"
+            app:popUpTo="@id/mainHomeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>
