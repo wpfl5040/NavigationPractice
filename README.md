@@ -91,6 +91,8 @@ def nav_version = "2.3.0"
 - Pop Enter: B화면에서 A화면으로 돌아올 때, A화면이 사용할 애니메이션. slide_from_left
 - Pop Exit: B화면에서 A화면으로 돌아올 때, B화면이 사용할 애니메이션. slide_to_right
 
+- https://developer.android.com/training/basics/fragments/animate
+
 ## NavigationUI
 - toolbar
 ```
